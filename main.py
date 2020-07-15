@@ -100,7 +100,11 @@ class domain_search:
         my_header = {
             'Content-type': 'application/json'
         }
-        r = requests.post(token, json = {'text': message}, headers = my_header)
+        message = {
+            'text': message
+        }
+        json_message = json.dumps(message)
+        r = requests.post(token, data=json_message, headers=my_header)
         return r.text 
 
 
