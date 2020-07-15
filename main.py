@@ -110,7 +110,7 @@ class domain_search:
 
 if __name__ == '__main__':
     #取得dns webit id  
-    token = 'https://hooks.slack.com/services/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'  
+    token = ''  
     sql_id = []                            #製作列表
     domain = []
     sql = r"SELECT  `id` FROM `webit-v2`.`cloud` LIMIT 1000;"
