@@ -116,6 +116,7 @@ if __name__ == '__main__':
     sql = r"SELECT  `id` FROM `webit-v2`.`cloud` LIMIT 1000;"
     a = domain_search()
     id_result = list(a.find_db(sql))
+    print(datetime.datetime.today())
     for i in id_result:
         sql_id.append('%s' % i)
     for i in sql_id:
