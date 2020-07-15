@@ -124,12 +124,15 @@ if __name__ == '__main__':
         print(i)
         t = a.whoistry(i)
         print(t)
-        if t <= 30 and t >= 0:
-            messages = '{}此域名還有{}天過期'.format(i, t)
-            a.slack(token, messages)
-        elif t < 0:
-            messages = '{}此此域名過期了，請續費'.format(i)
-            a.slack(token, messages)
+        try:
+            if t <= 30 and t >= 0:
+                messages = '{}此域名還有{}天過期'.format(i, t)
+                a.slack(token, messages)
+            elif t < 0:
+                messages = '{}此此域名過期了，請續費'.format(i)
+                a.slack(token, messages)
+        except Exception as e:
+            print(e)
         time.sleep(7)
         
 
